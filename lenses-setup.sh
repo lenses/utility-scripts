@@ -29,7 +29,7 @@ setup ()
 
 	if test -w $HOME_DIR; then
 	  if test -w $HOME_DIR.bak; then
-	  	echo "Directory $HOME_DIR and backup directory $HOME_DIR.bak both exist. Backup and delete either one to run. bye."
+	  	echo "Directory $HOME_DIR and backup directory $HOME_DIR.bak both exist. Backup or delete either one to run. bye."
 	  	exit 1
 	  fi
 	  mv -f $HOME_DIR $HOME_DIR.bak 
