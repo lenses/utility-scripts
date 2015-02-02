@@ -4,7 +4,7 @@
 
 ROOT=~/Documents
 HOME_DIR="$ROOT/lenses"
-COMPOSER="th-connector" #lens-composer
+COMPOSER="th-connector" #th-lens-composer
 GIT_ORG="thelmanews"  #lenses
 COMPOSER_DIR="$HOME_DIR/$COMPOSER"
 
