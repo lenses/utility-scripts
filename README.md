@@ -4,6 +4,11 @@ Script to setup and run lenses app.
 ## Other useful scripts:
 
 * Runs git status on every th-* directory. Run in development (e.g. lenses) directory
+For Lenses:
+<pre>
+find . -name 'lens*' -type d -depth 1 -exec sh -c 'echo "\n \x1B[0;33m CHECKING STATUS IN {} \x1B[0m \n"' \; -exec git -C {} status \;
+</pre>
+For Thelma:
 <pre>
 find . -name 'th-*' -type d -depth 1 -exec sh -c 'echo "\n \x1B[0;33m CHECKING STATUS IN {} \x1B[0m \n"' \; -exec git -C {} status \;
 </pre>
