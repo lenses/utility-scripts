@@ -29,5 +29,5 @@ curl -u [USERNAME] -s https://api.github.com/orgs/lenses/repos?per_page=100 | ru
 
 * get all lenses repos:
 <pre>
-curl -s https://api.github.com/orgs/lenses/repos | grep ssh_url | grep lens- | sed s/\"ssh_url\"\://g | sed s/\"//g | sed s/,//g | xargs -I {} -n 1 git clone {}
+curl -s https://api.github.com/orgs/lenses/repos?per_page=100 | grep ssh_url | grep lens- | sed s/\"ssh_url\"\://g | sed s/\"//g | sed s/,//g | xargs -I {} -n 1 git clone {}
 </pre>
