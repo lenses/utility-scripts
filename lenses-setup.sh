@@ -4,8 +4,8 @@
 
 ROOT=~/Documents
 HOME_DIR="$ROOT/lenses"
-COMPOSER="th-connector" #th-lens-composer
-GIT_ORG="thelmanews"  #lenses
+COMPOSER="lenses-freeform" #th-lens-composer
+GIT_ORG="lenses"  #lenses
 COMPOSER_DIR="$HOME_DIR/$COMPOSER"
 
 if [ $# -eq 0 ]; then
@@ -46,7 +46,7 @@ setup ()
 
 	startServer
 
-	#kill $(ps aux | grep 'python -m SimpleHTTPServer 8000' | awk '{print $2}')
+	#kill $(ps aux | grep 'python -m SimpleHTTPServer 8008' | awk '{print $2}')
 
 
 	#exit 0
@@ -58,11 +58,11 @@ startServer ()
 
 	cd $HOME_DIR
 	echo "shutting down already running server..."
-	kill $(ps aux | grep 'python -m SimpleHTTPServer 8000' | awk '{print $2}')
+	kill $(ps aux | grep 'python -m SimpleHTTPServer 8008' | awk '{print $2}')
 	echo "running python server in background"
-	#nohup python -m SimpleHTTPServer 8000 &
-	nohup python -m SimpleHTTPServer 8000  0<&- &>/dev/null &
-	echo "Python is running on port 8000. Lenses app is at http://localhost:8000/$COMPOSER/demo.html"
+	#nohup python -m SimpleHTTPServer 8008 &
+	nohup python -m SimpleHTTPServer 8008  0<&- &>/dev/null &
+	echo "Python $? is running on port 8008. Lenses app is at http://localhost:8008/$COMPOSER/demo.html"
 
 }
 
@@ -107,7 +107,7 @@ case "$1" in
 
         kill-server)
         	echo "turning off python server"
-        	kill $(ps aux | grep 'python -m SimpleHTTPServer 8000' | awk '{print $2}')
+        	kill $(ps aux | grep 'python -m SimpleHTTPServer 8008' | awk '{print $2}')
         	exit 0
         	;; 
          
