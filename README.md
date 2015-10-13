@@ -1,6 +1,35 @@
 # scripts
 Script to setup and run lenses app.
 
+## Instructios to use lenses-setup.sh script.
+
+### Setup:
+1. Clone or download/unzip the repo
+2. Open terminal and go to the repo directory you just created (e.g. `cd ~/Desktop/utility-scripts`)
+3. Run `./lenes-setup.sh setup`. The clones the UI, installs bower dependencies and runs python SimpleHTTPServer.
+4. Open browser and go to `http://localhost:8008/lenses-freeform/demo.html` (or `http://localhost:8008/lens-compose/demo.html` for linear version)
+
+**NOTE** Script installs the files in `HOME_DIR/Documents/lenses`. If that directory exists it backs up that directory to `lenses.bck`. If both exist setup scrips exits without installing. Remove either directory and run the script again.
+
+### Modifying setup scripts:
+There are 4 variables on top of lenses-setup.sh:
+```
+ROOT=~/Documents
+HOME_DIR="$ROOT/lenses"
+COMPOSER="lenses-freeform" #lens-composer
+GIT_ORG="lenses"  #lenses
+```
+
+* `ROOT` is where the lenses direcotry will be created. You can change it to `~/Desktop` or anything else (`~` means your home directory)
+* `HOME_DIR` is the name of directory. Keep the `$ROOT/` part but you can modify `lenses` to any other name.
+* `COMPOSER` is the UI version you want: use `lenses-freeform` for the freeform version or `lens-composer` for linear.
+* `GIT_ORG` (Advanced) is the github user/organization which has the composer code. If you fork `lenses-freeform` or `lens-composer` you can change that to your github account.
+
+### Other lenses-setup.sh tasks:
+* `lenses-setup.sh run-server` runs python server. If you have lenses setup but just want to run http server use this (similar to `python -m SimpleHTTPServer 8008`)
+* `lenses-setup.sh kill-server` Shuts down the server.
+* `lenses-setup.sh update` updates your code base. **IMPORTANT NOTE** If you have modified the code of UI or one of the already existing components runing update scripts **overwrites** your changes. If you have only created a new component in a new directory in `lenses` folder it will be safe.
+
 ## Other useful scripts:
 
 * Runs git status on every th-* directory. Run in development (e.g. lenses) directory
