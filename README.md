@@ -30,6 +30,10 @@ GIT_ORG="lenses"  #lenses
 * `lenses-setup.sh kill-server` Shuts down the server.
 * `lenses-setup.sh update` updates your code base. **IMPORTANT NOTE** If you have modified the code of UI or one of the already existing components runing update scripts **overwrites** your changes. If you have only created a new component in a new directory in `lenses` folder it will be safe.
 
+#### Comon Problems:
+If by running `./lenses-setup.sh setup` you get `Permission denied` error try `chmod u+x lenses-setup.sh` to give execute permission to script. You might need to do `sudo chmod u+x lenses-setup.sh` if former command didn't work (though it is a red flag that there is a problem on your computer setup)
+
+
 ## Other useful scripts:
 
 * Runs git status on every th-* directory. Run in development (e.g. lenses) directory
