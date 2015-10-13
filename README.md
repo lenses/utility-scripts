@@ -31,12 +31,14 @@ GIT_ORG="lenses"  #lenses
 * `lenses-setup.sh update` updates your code base. **IMPORTANT NOTE** If you have modified the code of UI or one of the already existing components runing update scripts **overwrites** your changes. If you have only created a new component in a new directory in `lenses` folder it will be safe.
 
 #### Comon Problems:
-If by running `./lenses-setup.sh setup` you get `Permission denied` error try `chmod u+x lenses-setup.sh` to give execute permission to script. You might need to do `sudo chmod u+x lenses-setup.sh` if former command didn't work (though it is a red flag that there is a problem on your computer setup)
+* If by running `./lenses-setup.sh setup` you get `Permission denied` error try `chmod u+x lenses-setup.sh` to give execute permission to script. You might need to do `sudo chmod u+x lenses-setup.sh` if former command didn't work (though it is a red flag that there is a problem on your computer setup)
+
+**For any other problems please file an [issue](https://github.com/lenses/utility-scripts/issues)**
 
 
 ## Other useful scripts:
 
-* Runs git status on every th-* directory. Run in development (e.g. lenses) directory
+* Runs git status on every component directory (e.g. lens-*). Run inside development (e.g. lenses) directory
 
 For Lenses:
 <pre>
@@ -60,7 +62,7 @@ curl -u [USERNAME] -s https://api.github.com/orgs/lenses/repos?per_page=100 | ru
 }' 
 </pre>
 
-* get all lenses repos:
+* Clone all lenses repos:
 <pre>
 curl -s https://api.github.com/orgs/lenses/repos?per_page=100 | grep ssh_url | grep lens- | sed s/\"ssh_url\"\://g | sed s/\"//g | sed s/,//g | xargs -I {} -n 1 git clone {}
 </pre>
