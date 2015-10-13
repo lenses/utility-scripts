@@ -1,4 +1,5 @@
-# scripts
+
+# ![lenses logo](https://avatars3.githubusercontent.com/u/8629151?v=3&s=200) Lenses Utility Scripts
 Script to setup and run lenses app.
 
 ## Instructios to use lenses-setup.sh script.
